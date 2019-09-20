@@ -1,10 +1,12 @@
 class Plane
   attr_accessor :airport
   attr_accessor :weather
+  attr_accessor :capacity
 
   def initialize
     @airport = []
     @weather = ['sunny', 'sunny', 'sunny', 'stormy']
+    @capacity = 5
   end
 
   def land(plane)
@@ -23,7 +25,7 @@ class Plane
   end
 
   def full?
-    @airport.count >= 5
+    @airport.count >= @capacity
   end
 
   def bad_weather

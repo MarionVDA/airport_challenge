@@ -12,6 +12,7 @@ describe Plane do
   before do
     allow(plane).to receive(:bad_weather).and_return false
   end
+  
   it 'plane to land at an airport' do
     plane.land(plane)
     expect(plane.airport).to include(plane)
@@ -63,4 +64,5 @@ describe Plane do
   it 'raise error if weather is stormy' do
     expect { plane.land(plane) }.to raise_error('Stormy weather!')
   end
+
 end
